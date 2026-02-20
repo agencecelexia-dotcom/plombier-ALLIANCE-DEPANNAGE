@@ -21,11 +21,9 @@ export const mainNavItems: NavItem[] = [
 
 export const footerNavItems: NavItem[] = [
   { label: "Accueil", href: "/" },
-  { label: "Réalisations", href: "/realisations" },
-  { label: "Avis clients", href: "/avis-clients" },
   { label: "À propos", href: "/a-propos" },
-  { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
   { label: "Mentions légales", href: "/mentions-legales" },
 ];
 
