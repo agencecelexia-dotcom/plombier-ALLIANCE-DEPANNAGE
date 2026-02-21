@@ -57,7 +57,7 @@ export interface Submission {
   service: string;
   message: string;
   date: string;
-  status: "new" | "read" | "done";
+  status: "new" | "read" | "contacted_phone" | "contacted_email" | "done";
 }
 
 export async function getSubmissions(): Promise<Submission[]> {
