@@ -21,13 +21,133 @@ import {
   CheckCircle,
   BookOpen,
   Info,
+  PhoneCall,
+  MailOpen,
 } from "lucide-react";
 import type { AnalyticsEvent, Submission } from "@/lib/storage";
+import { siteConfig } from "@/config/site";
 
 // --- Types ---
 
 type Period = "7d" | "30d" | "all";
 type Tab = "overview" | "submissions";
+
+// --- Demo data ---
+
+const DEMO_SUBMISSIONS: Submission[] = [
+  {
+    id: "demo-1",
+    nom: "Jean-Marc Dupont",
+    telephone: "06 12 34 56 78",
+    email: "jm.dupont@gmail.com",
+    service: "Depannage urgent 24h/24",
+    message: "Fuite importante sous l'evier de la cuisine, eau qui coule depuis ce matin. Besoin d'une intervention rapide.",
+    date: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    status: "new",
+  },
+  {
+    id: "demo-2",
+    nom: "Fatima Benali",
+    telephone: "07 98 76 54 32",
+    email: "fatima.benali@outlook.fr",
+    service: "Chauffe-eau",
+    message: "Mon chauffe-eau ne fonctionne plus depuis hier soir. Appartement a Argenteuil, 3eme etage.",
+    date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+    status: "new",
+  },
+  {
+    id: "demo-3",
+    nom: "Michel Lebrun",
+    telephone: "06 55 44 33 22",
+    email: "m.lebrun@wanadoo.fr",
+    service: "Chauffage",
+    message: "Chaudiere qui fait du bruit et ne chauffe plus correctement. Entretien annuel pas fait depuis 2 ans.",
+    date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+    status: "read",
+  },
+  {
+    id: "demo-4",
+    nom: "Sophie Marchand",
+    telephone: "06 78 90 12 34",
+    email: "sophie.marchand@free.fr",
+    service: "Serrurerie",
+    message: "Porte claquee avec cles a l'interieur. Besoin d'une ouverture de porte en urgence.",
+    date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+    status: "contacted_phone",
+  },
+  {
+    id: "demo-5",
+    nom: "Ahmed Kadir",
+    telephone: "07 11 22 33 44",
+    email: "ahmed.kadir@gmail.com",
+    service: "Plomberie generale",
+    message: "Installation d'un nouveau WC suspendu. Devis demande pour travaux dans salle de bain.",
+    date: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+    status: "done",
+  },
+];
+
+function generateDemoEvents(): AnalyticsEvent[] {
+  const events: AnalyticsEvent[] = [];
+  const pages = ["/", "/plomberie", "/chauffage", "/serrurerie-depannage", "/contact", "/a-propos", "/chauffe-eau", "/depannage-plomberie"];
+  const clickElements = ["hero-appel", "service-hero-appel", "cta-appel", "hero-devis", "footer-tel"];
+  const now = Date.now();
+
+  for (let day = 29; day >= 0; day--) {
+    const baseDate = now - day * 24 * 60 * 60 * 1000;
+    const isWeekend = [0, 6].includes(new Date(baseDate).getDay());
+    const viewCount = isWeekend
+      ? Math.floor(Math.random() * 12) + 4
+      : Math.floor(Math.random() * 25) + 8;
+
+    for (let v = 0; v < viewCount; v++) {
+      const offset = Math.random() * 24 * 60 * 60 * 1000;
+      events.push({
+        type: "page_view",
+        page: pages[Math.floor(Math.random() * pages.length)],
+        timestamp: new Date(baseDate + offset).toISOString(),
+        userAgent: `Mozilla/5.0 Demo-${Math.floor(Math.random() * 100)}`,
+      });
+    }
+
+    const clickCount = Math.floor(viewCount * 0.15);
+    for (let c = 0; c < clickCount; c++) {
+      const offset = Math.random() * 24 * 60 * 60 * 1000;
+      events.push({
+        type: "click",
+        page: pages[0],
+        element: clickElements[Math.floor(Math.random() * clickElements.length)],
+        timestamp: new Date(baseDate + offset).toISOString(),
+        userAgent: `Mozilla/5.0 Demo-${Math.floor(Math.random() * 100)}`,
+      });
+    }
+  }
+
+  return events;
+}
+
+// --- Status config ---
+
+const STATUS_CONFIG: Record<
+  Submission["status"],
+  { label: string; color: string; bg: string }
+> = {
+  new: { label: "Nouveau", color: "text-blue-300", bg: "bg-blue-500/20" },
+  read: { label: "Lu", color: "text-amber-300", bg: "bg-amber-500/20" },
+  contacted_phone: { label: "Appele", color: "text-violet-300", bg: "bg-violet-500/20" },
+  contacted_email: { label: "Email envoye", color: "text-cyan-300", bg: "bg-cyan-500/20" },
+  done: { label: "Traite", color: "text-emerald-300", bg: "bg-emerald-500/20" },
+};
+
+// --- Mailto builder ---
+
+function buildMailtoLink(sub: Submission): string {
+  const subject = encodeURIComponent(`Re: Votre demande ${siteConfig.name} - ${sub.service}`);
+  const body = encodeURIComponent(
+    `Bonjour ${sub.nom.split(" ")[0]},\n\nMerci pour votre demande concernant : ${sub.service}.\n\nNous avons bien recu votre message et nous revenons vers vous rapidement.\n\nCordialement,\n${siteConfig.name}\n${siteConfig.phone}`
+  );
+  return `mailto:${sub.email}?subject=${subject}&body=${body}`;
+}
 
 // --- Utility functions ---
 
@@ -121,7 +241,6 @@ function AreaChart({ data }: { data: { label: string; count: number }[] }) {
           <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.02" />
         </linearGradient>
       </defs>
-      {/* Grid lines */}
       {[0, 0.25, 0.5, 0.75, 1].map((pct) => {
         const y = padding.top + chartH * (1 - pct);
         return (
@@ -133,15 +252,11 @@ function AreaChart({ data }: { data: { label: string; count: number }[] }) {
           </g>
         );
       })}
-      {/* Area */}
       <path d={areaPath} fill="url(#areaGrad)" />
-      {/* Line */}
       <path d={linePath} fill="none" stroke="#3b82f6" strokeWidth="2" />
-      {/* Points */}
       {points.map((p, i) => (
         <circle key={i} cx={p.x} cy={p.y} r="3" fill="#3b82f6" />
       ))}
-      {/* X labels */}
       {data.map((d, i) => {
         if (data.length > 14 && i % 3 !== 0) return null;
         return (
@@ -273,23 +388,13 @@ function SubmissionsTable({
   submissions,
   onUpdateStatus,
   onDelete,
+  isDemo,
 }: {
   submissions: Submission[];
   onUpdateStatus: (id: string, status: Submission["status"]) => void;
   onDelete: (id: string) => void;
+  isDemo: boolean;
 }) {
-  const statusColors: Record<string, string> = {
-    new: "bg-blue-500/20 text-blue-300",
-    read: "bg-amber-500/20 text-amber-300",
-    done: "bg-emerald-500/20 text-emerald-300",
-  };
-
-  const statusLabels: Record<string, string> = {
-    new: "Nouveau",
-    read: "Lu",
-    done: "Traite",
-  };
-
   if (submissions.length === 0) {
     return (
       <div className="text-center py-12 text-slate-400">
@@ -301,76 +406,110 @@ function SubmissionsTable({
 
   return (
     <div className="space-y-3">
-      {submissions.map((sub) => (
-        <div
-          key={sub.id}
-          className="bg-[#0f172a] rounded-xl p-4 border border-slate-700/50 hover:border-slate-600/50 transition-colors"
-        >
-          <div className="flex items-start justify-between gap-4 mb-3">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="font-medium text-white">{sub.nom}</span>
-                <span className={`text-xs px-2 py-0.5 rounded-full ${statusColors[sub.status]}`}>
-                  {statusLabels[sub.status]}
-                </span>
-              </div>
-              <div className="flex items-center gap-4 text-sm text-slate-400">
-                <span className="flex items-center gap-1">
-                  <Phone className="w-3 h-3" />
-                  {sub.telephone}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Mail className="w-3 h-3" />
-                  {sub.email}
-                </span>
-              </div>
-            </div>
-            <div className="text-xs text-slate-500 flex items-center gap-1 shrink-0">
-              <Clock className="w-3 h-3" />
-              {formatDate(sub.date)}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 mb-3 text-sm">
-            <Wrench className="w-3.5 h-3.5 text-slate-500" />
-            <span className="text-slate-300">{sub.service}</span>
-          </div>
-
-          {sub.message && (
-            <p className="text-sm text-slate-400 mb-3 bg-slate-800/50 rounded-lg p-3">
-              {sub.message}
-            </p>
-          )}
-
-          <div className="flex items-center gap-2">
-            {sub.status === "new" && (
-              <button
-                onClick={() => onUpdateStatus(sub.id, "read")}
-                className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 transition-colors"
-              >
-                <BookOpen className="w-3 h-3" />
-                Marquer lu
-              </button>
-            )}
-            {sub.status !== "done" && (
-              <button
-                onClick={() => onUpdateStatus(sub.id, "done")}
-                className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 transition-colors"
-              >
-                <CheckCircle className="w-3 h-3" />
-                Traite
-              </button>
-            )}
-            <button
-              onClick={() => onDelete(sub.id)}
-              className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-red-500/10 text-red-300 hover:bg-red-500/20 transition-colors ml-auto"
-            >
-              <Trash2 className="w-3 h-3" />
-              Supprimer
-            </button>
-          </div>
+      {isDemo && (
+        <div className="flex items-center gap-2 text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2 mb-2">
+          <Info className="w-4 h-4 shrink-0" />
+          Donnees de demonstration — les vraies demandes apparaitront ici apres les premiers contacts.
         </div>
-      ))}
+      )}
+      {submissions.map((sub) => {
+        const statusCfg = STATUS_CONFIG[sub.status] ?? STATUS_CONFIG.new;
+        const mailtoHref = buildMailtoLink(sub);
+        const telHref = `tel:${sub.telephone.replace(/\s/g, "")}`;
+
+        return (
+          <div
+            key={sub.id}
+            className="bg-[#0f172a] rounded-xl p-4 border border-slate-700/50 hover:border-slate-600/50 transition-colors"
+          >
+            <div className="flex items-start justify-between gap-4 mb-3">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1 flex-wrap">
+                  <span className="font-medium text-white">{sub.nom}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${statusCfg.bg} ${statusCfg.color}`}>
+                    {statusCfg.label}
+                  </span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-slate-400 flex-wrap">
+                  <span className="flex items-center gap-1">
+                    <Phone className="w-3 h-3" />
+                    {sub.telephone}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Mail className="w-3 h-3" />
+                    {sub.email}
+                  </span>
+                </div>
+              </div>
+              <div className="text-xs text-slate-500 flex items-center gap-1 shrink-0">
+                <Clock className="w-3 h-3" />
+                {formatDate(sub.date)}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 mb-3 text-sm">
+              <Wrench className="w-3.5 h-3.5 text-slate-500" />
+              <span className="text-slate-300">{sub.service}</span>
+            </div>
+
+            {sub.message && (
+              <p className="text-sm text-slate-400 mb-3 bg-slate-800/50 rounded-lg p-3">
+                {sub.message}
+              </p>
+            )}
+
+            {/* Action buttons */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {/* Contact actions */}
+              <a
+                href={telHref}
+                onClick={() => onUpdateStatus(sub.id, "contacted_phone")}
+                className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-violet-500/10 text-violet-300 hover:bg-violet-500/20 transition-colors"
+              >
+                <PhoneCall className="w-3 h-3" />
+                Appeler
+              </a>
+              <a
+                href={mailtoHref}
+                onClick={() => onUpdateStatus(sub.id, "contacted_email")}
+                className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 transition-colors"
+              >
+                <MailOpen className="w-3 h-3" />
+                Repondre email
+              </a>
+
+              {/* Status actions */}
+              {sub.status === "new" && (
+                <button
+                  onClick={() => onUpdateStatus(sub.id, "read")}
+                  className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 transition-colors"
+                >
+                  <BookOpen className="w-3 h-3" />
+                  Marquer lu
+                </button>
+              )}
+              {sub.status !== "done" && (
+                <button
+                  onClick={() => onUpdateStatus(sub.id, "done")}
+                  className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 transition-colors"
+                >
+                  <CheckCircle className="w-3 h-3" />
+                  Traite
+                </button>
+              )}
+
+              {/* Delete */}
+              <button
+                onClick={() => onDelete(sub.id)}
+                className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-red-500/10 text-red-300 hover:bg-red-500/20 transition-colors ml-auto"
+              >
+                <Trash2 className="w-3 h-3" />
+                Supprimer
+              </button>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -384,8 +523,13 @@ interface DashboardClientProps {
 
 export function DashboardClient({ initialEvents, initialSubmissions }: DashboardClientProps) {
   const router = useRouter();
-  const [events, setEvents] = useState(initialEvents);
-  const [submissions, setSubmissions] = useState(initialSubmissions);
+
+  // Use demo data when there is no real data yet
+  const isDemo = initialEvents.length === 0 && initialSubmissions.length === 0;
+  const demoEvents = useMemo(() => (isDemo ? generateDemoEvents() : []), [isDemo]);
+
+  const [events, setEvents] = useState<AnalyticsEvent[]>(isDemo ? demoEvents : initialEvents);
+  const [submissions, setSubmissions] = useState<Submission[]>(isDemo ? DEMO_SUBMISSIONS : initialSubmissions);
   const [period, setPeriod] = useState<Period>("30d");
   const [tab, setTab] = useState<Tab>("overview");
   const [refreshing, setRefreshing] = useState(false);
@@ -433,6 +577,7 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
 
   // Actions
   async function handleRefresh() {
+    if (isDemo) return;
     setRefreshing(true);
     try {
       const [evRes, subRes] = await Promise.all([
@@ -455,6 +600,8 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
     setSubmissions((prev) =>
       prev.map((s) => (s.id === id ? { ...s, status } : s))
     );
+    // Skip API call for demo entries
+    if (id.startsWith("demo-")) return;
     fetch("/api/admin/submissions", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -465,6 +612,7 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
   async function handleDelete(id: string) {
     if (!confirm("Supprimer cette demande ?")) return;
     setSubmissions((prev) => prev.filter((s) => s.id !== id));
+    if (id.startsWith("demo-")) return;
     fetch("/api/admin/submissions", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -485,14 +633,16 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={handleRefresh}
-              disabled={refreshing}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sm transition-colors"
-            >
-              <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
-              <span className="hidden sm:inline">Actualiser</span>
-            </button>
+            {!isDemo && (
+              <button
+                onClick={handleRefresh}
+                disabled={refreshing}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sm transition-colors"
+              >
+                <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
+                <span className="hidden sm:inline">Actualiser</span>
+              </button>
+            )}
             <button
               onClick={handleLogout}
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800 hover:bg-red-900/50 text-sm transition-colors"
@@ -511,7 +661,9 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
           <div>
             <p className="text-white font-medium">Bonjour Sohaib !</p>
             <p className="text-sm text-slate-400 mt-0.5">
-              Les donnees affichees sont factices et servent uniquement a des fins de demonstration.
+              {isDemo
+                ? "Les donnees affichees sont des exemples. Elles seront remplacees par vos vraies stats des que le site recevra ses premiers visiteurs."
+                : "Tableau de bord Alliance Depannage — donnees en temps reel."}
             </p>
           </div>
         </div>
@@ -654,6 +806,7 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
             submissions={submissions}
             onUpdateStatus={handleUpdateStatus}
             onDelete={handleDelete}
+            isDemo={isDemo}
           />
         )}
       </div>
