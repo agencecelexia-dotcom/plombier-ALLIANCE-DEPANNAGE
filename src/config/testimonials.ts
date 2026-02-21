@@ -11,7 +11,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Martine V.",
     rating: 5,
-    text: "Ma porte d'entrée bloquée un vendredi soir, j'ai appelé Alliance Dépannage en urgence. Intervention en 45 minutes, serrure remplacée, je recommande à tous les Niçois qui ont besoin d'un dépannage rapide et honnête.",
+    text: "Ma porte d'entrée bloquée un vendredi soir, j'ai appelé Alliance Dépannage en urgence. Intervention en 45 minutes, serrure remplacée, je recommande aux habitants d'Argenteuil qui ont besoin d'un dépannage rapide et honnête.",
     date: "Décembre 2025",
     source: "Google",
   },
@@ -25,7 +25,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Nadia R.",
     rating: 5,
-    text: "Dégât des eaux dans mon appartement à Nice — Alliance Dépannage a réagi immédiatement. Coupure d'eau, réparation et accompagnement pour le constat d'assurance. Un vrai professionnel du dépannage d'urgence.",
+    text: "Dégât des eaux dans mon appartement à Argenteuil — Alliance Dépannage a réagi immédiatement. Coupure d'eau, réparation et accompagnement pour le constat d'assurance. Un vrai professionnel du dépannage d'urgence.",
     date: "Octobre 2025",
     source: "Google",
   },
@@ -39,7 +39,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Amina L.",
     rating: 5,
-    text: "Climatisation installée par Alliance Dépannage — parfait pour l'été à Nice ! Installation propre, l'équipe est venue à l'heure, tout fonctionne très bien depuis. Je reviendrai pour l'entretien annuel.",
+    text: "Climatisation installée par Alliance Dépannage — parfait pour l'été à Argenteuil ! Installation propre, l'équipe est venue à l'heure, tout fonctionne très bien depuis. Je reviendrai pour l'entretien annuel.",
     date: "Août 2025",
     source: "Google",
   },

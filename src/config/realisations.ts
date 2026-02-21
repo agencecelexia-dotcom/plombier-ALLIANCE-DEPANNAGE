@@ -5,9 +5,9 @@ export const realisations: Realisation[] = [
     id: "sdb-villeurbanne",
     title: "Réparation fuite urgente",
     category: "Plomberie",
-    city: "Nice Centre",
+    city: "Argenteuil Centre",
     description:
-      "Intervention d'urgence pour une fuite sur canalisation d'eau chaude dans un appartement du centre de Nice. Réparation complète en 1h30.",
+      "Intervention d'urgence pour une fuite sur canalisation d'eau chaude dans un appartement du centre d'Argenteuil. Réparation complète en 1h30.",
     beforePrompt:
       "Fuite d'eau importante sur tuyau cuivre sous évier, gouttes d'eau, sol mouillé, urgence, photo réaliste brute, ratio 4:3",
     afterPrompt:
@@ -18,9 +18,9 @@ export const realisations: Realisation[] = [
     id: "cuisine-lyon3",
     title: "Remplacement chauffe-eau",
     category: "Chauffe-eau",
-    city: "Antibes",
+    city: "Bezons",
     description:
-      "Remplacement d'un vieux chauffe-eau en panne par un ballon électrique neuf. Intervention réalisée en demi-journée à Antibes.",
+      "Remplacement d'un vieux chauffe-eau en panne par un ballon électrique neuf. Intervention réalisée en demi-journée à Bezons.",
     beforePrompt:
       "Vieux chauffe-eau rouillé encrassé dans placard technique, tuyaux oxydés, photo réaliste, ratio 4:3",
     afterPrompt:
@@ -31,7 +31,7 @@ export const realisations: Realisation[] = [
     id: "chauffe-eau-caluire",
     title: "Déblocage serrure d'urgence",
     category: "Serrurerie",
-    city: "Nice Libération",
+    city: "Sannois",
     description:
       "Ouverture d'urgence suite à une porte claquée, puis remplacement de la serrure par un modèle sécurisé multipoints.",
     beforePrompt:
@@ -44,9 +44,9 @@ export const realisations: Realisation[] = [
     id: "pac-bron",
     title: "Installation climatisation split",
     category: "Climatisation",
-    city: "Cagnes-sur-Mer",
+    city: "Colombes",
     description:
-      "Installation d'un climatiseur split inverter dans un appartement à Cagnes-sur-Mer. Pose propre, raccordements soignés.",
+      "Installation d'un climatiseur split inverter dans un appartement à Colombes. Pose propre, raccordements soignés.",
     beforePrompt:
       "Salon appartement méditerranéen sans climatisation, fenêtre ouverte chaleur, photo réaliste, ratio 4:3",
     afterPrompt:
@@ -57,7 +57,7 @@ export const realisations: Realisation[] = [
     id: "sdb-pmr-lyon6",
     title: "Réparation chaudière urgente",
     category: "Chauffage",
-    city: "Nice Est",
+    city: "Ermont",
     description:
       "Dépannage d'urgence chaudière gaz — diagnostic et remplacement du circulateur défaillant. Chauffage rétabli en 2h.",
     beforePrompt:
@@ -70,9 +70,9 @@ export const realisations: Realisation[] = [
     id: "chaudiere-tassin",
     title: "Détection et réparation de fuite cachée",
     category: "Plomberie",
-    city: "Cannes",
+    city: "Cergy",
     description:
-      "Recherche et réparation d'une fuite dans une canalisation encastrée à Cannes. Utilisation de détecteur acoustique sans casse.",
+      "Recherche et réparation d'une fuite dans une canalisation encastrée à Cergy. Utilisation de détecteur acoustique sans casse.",
     beforePrompt:
       "Mur de salle de bain avec trace humidité, carrelage décollé, fuite non visible, photo réaliste, ratio 4:3",
     afterPrompt:
@@ -83,9 +83,9 @@ export const realisations: Realisation[] = [
     id: "douche-lyon7",
     title: "Débouchage canalisation haute pression",
     category: "Plomberie",
-    city: "Menton",
+    city: "Pontoise",
     description:
-      "Débouchage d'une canalisation principale complètement obstruée dans une villa à Menton. Intervention par hydrocurage haute pression.",
+      "Débouchage d'une canalisation principale complètement obstruée dans une villa à Pontoise. Intervention par hydrocurage haute pression.",
     beforePrompt:
       "Evier de cuisine avec eau stagnante bouchée, canalisation obstruée, photo réaliste, ratio 4:3",
     afterPrompt:
@@ -96,9 +96,9 @@ export const realisations: Realisation[] = [
     id: "plancher-chauffant-ecully",
     title: "Remplacement robinetterie complète",
     category: "Plomberie",
-    city: "Antibes Juan-les-Pins",
+    city: "Houilles",
     description:
-      "Remplacement de l'ensemble de la robinetterie d'une salle de bain ancienne à Antibes. Robinet mitigeur, douchette, WC.",
+      "Remplacement de l'ensemble de la robinetterie d'une salle de bain ancienne à Houilles. Robinet mitigeur, douchette, WC.",
     beforePrompt:
       "Salle de bain ancienne, robinets chromés rouillés qui gouttent, joints usés, photo réaliste, ratio 4:3",
     afterPrompt:
@@ -109,7 +109,7 @@ export const realisations: Realisation[] = [
     id: "depannage-lyon2",
     title: "Dégât des eaux — intervention express",
     category: "Plomberie",
-    city: "Nice Promenade",
+    city: "Argenteuil Nord",
     description:
       "Intervention express pour dégât des eaux important dans un appartement. Coupure, réparation et assèchement en urgence.",
     beforePrompt:
@@ -122,7 +122,7 @@ export const realisations: Realisation[] = [
     id: "sdb-complete-oullins",
     title: "Installation chaudière gaz condensation",
     category: "Chauffage",
-    city: "Nice Ouest",
+    city: "Cormeilles-en-Parisis",
     description:
       "Installation d'une chaudière gaz condensation en remplacement d'un modèle de 20 ans. Économies d'énergie immédiates.",
     beforePrompt:

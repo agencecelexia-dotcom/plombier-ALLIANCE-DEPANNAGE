@@ -25,7 +25,7 @@ const chiffres = [
 ];
 
 const valeurs = [
-  { icon: Clock, title: "Réactivité", desc: "Disponible 24h/24 et 7j/7, nous intervenons en moins de 2h pour toutes vos urgences à Nice et dans les Alpes-Maritimes." },
+  { icon: Clock, title: "Réactivité", desc: "Disponible 24h/24 et 7j/7, nous intervenons en moins de 2h pour toutes vos urgences à Argenteuil et dans le Val-d'Oise." },
   { icon: Heart, title: "Transparence", desc: "Devis détaillés, tarifs clairs, annoncés avant intervention. Vous savez exactement ce que vous payez, sans mauvaise surprise." },
   { icon: ShieldCheck, title: "Qualité", desc: "Travail soigné, matériaux de qualité, chantier propre. Alliance Dépannage garantit chaque intervention jusqu'à votre entière satisfaction." },
 ];
@@ -63,7 +63,7 @@ export default function AProposPage() {
                 Fondée en {siteConfig.foundedYear} par {siteConfig.founder}, {siteConfig.name} est née d&apos;une conviction simple : en situation d&apos;urgence, chaque minute compte. Les clients méritent un artisan fiable, disponible à toute heure et honnête sur ses tarifs.
               </p>
               <p>
-                Après {siteConfig.yearsExperience} ans d&apos;expérience et plus de {siteConfig.interventionsCount} interventions dans les Alpes-Maritimes, Sohaib et son équipe restent fidèles à cette philosophie. Plomberie, chauffage, climatisation, serrurerie : Alliance Dépannage couvre l&apos;ensemble des besoins en dépannage 24h/24 à Nice et dans sa région.
+                Après {siteConfig.yearsExperience} ans d&apos;expérience et plus de {siteConfig.interventionsCount} interventions dans le Val-d&apos;Oise, Sohaib et son équipe restent fidèles à cette philosophie. Plomberie, chauffage, climatisation, serrurerie : Alliance Dépannage couvre l&apos;ensemble des besoins en dépannage 24h/24 à Argenteuil et dans sa région.
               </p>
               <p>
                 Notre engagement : intervenir rapidement, expliquer clairement le problème et proposer la meilleure solution au juste prix. Aucune mauvaise surprise, aucun devis caché.
@@ -84,10 +84,10 @@ export default function AProposPage() {
       <SectionContainer variant="gray">
         <SectionHeading
           title="Notre équipe"
-          subtitle="Des techniciens qualifiés et disponibles à toute heure à Nice et dans les Alpes-Maritimes."
+          subtitle="Des techniciens qualifiés et disponibles à toute heure à Argenteuil et dans le Val-d'Oise."
         />
         <ImagePlaceholder
-          prompt="Equipe de 2-3 techniciens en uniforme bleu propre devant camionnette utilitaire blanche avec logo, souriant, parking exterieur Nice, lumiere naturelle, photo realiste, ratio 3:2"
+          prompt="Equipe de 2-3 techniciens en uniforme bleu propre devant camionnette utilitaire blanche avec logo, souriant, parking exterieur Argenteuil, lumiere naturelle, photo realiste, ratio 3:2"
           src={pageImages["a-propos-equipe"] || undefined}
           aspectRatio="3/2"
           alt={`L'équipe ${siteConfig.name}`}

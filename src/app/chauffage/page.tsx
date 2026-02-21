@@ -18,9 +18,9 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 const servicesChauffage = [
-  { icon: Flame, title: "Dépannage chaudière gaz", desc: "Panne, fuite, erreur d'affichage... Alliance Dépannage intervient en urgence pour le diagnostic et la réparation de votre chaudière gaz à Nice.", image: "Chaudiere gaz condensation murale blanche moderne dans buanderie rangee, ecran digital vert, tuyauterie cuivre propre, photo realiste, ratio 3:2", imageKey: "chauffage-chaudiere-gaz" },
+  { icon: Flame, title: "Dépannage chaudière gaz", desc: "Panne, fuite, erreur d'affichage... Alliance Dépannage intervient en urgence pour le diagnostic et la réparation de votre chaudière gaz à Argenteuil.", image: "Chaudiere gaz condensation murale blanche moderne dans buanderie rangee, ecran digital vert, tuyauterie cuivre propre, photo realiste, ratio 3:2", imageKey: "chauffage-chaudiere-gaz" },
   { icon: Heater, title: "Radiateurs et circuit de chauffage", desc: "Radiateurs froids, purge, remplacement de robinets thermostatiques, équilibrage du circuit... Nous rétablissons le confort thermique rapidement.", image: "Installation plancher chauffant en cours, tubes PER rouges en serpentin sur isolant argente, vue plongee, chantier propre, photo realiste, ratio 3:2", imageKey: "chauffage-plancher-chauffant" },
-  { icon: Wind, title: "Pompe à chaleur et climatisation", desc: "Installation et dépannage de pompe à chaleur air-eau et climatisation réversible. Confort été comme hiver à Nice et dans les Alpes-Maritimes.", image: "Unite exterieure pompe a chaleur air-eau blanche installee sur terrasse maison individuelle, jardin soigne, photo realiste, ratio 3:2", imageKey: "chauffage-pac" },
+  { icon: Wind, title: "Pompe à chaleur et climatisation", desc: "Installation et dépannage de pompe à chaleur air-eau et climatisation réversible. Confort été comme hiver à Argenteuil et dans le Val-d'Oise.", image: "Unite exterieure pompe a chaleur air-eau blanche installee sur terrasse maison individuelle, jardin soigne, photo realiste, ratio 3:2", imageKey: "chauffage-pac" },
 ];
 
 const entretienInclus = [
@@ -37,7 +37,7 @@ export default function ChauffagePage() {
     <ServicePageLayout
       hero={{
         title: `Chauffagiste à ${siteConfig.address.city} — Dépannage, installation et entretien`,
-        subtitle: "Chaudière en panne, radiateurs froids ? Intervention rapide 24h/24 à Nice.",
+        subtitle: "Chaudière en panne, radiateurs froids ? Intervention rapide 24h/24 à Argenteuil.",
         imagePlaceholder: {
           prompt: "Salon chaleureux maison francaise, radiateur design blanc sous fenetre, lumiere doree hivernale, sensation confort et chaleur, photo realiste, ratio 16:9",
           aspectRatio: "16/9",
@@ -55,7 +55,7 @@ export default function ChauffagePage() {
       <SectionContainer>
         <SectionHeading
           title="Nos services chauffage"
-          subtitle="Dépannage, installation et entretien de tous types de systèmes de chauffage à Nice."
+          subtitle="Dépannage, installation et entretien de tous types de systèmes de chauffage à Argenteuil."
         />
         <div className="space-y-12">
           {servicesChauffage.map((s, i) => (
@@ -79,7 +79,7 @@ export default function ChauffagePage() {
       <SectionContainer variant="gray" id="entretien">
         <SectionHeading
           title="Entretien annuel chaudière"
-          subtitle="L'entretien de votre chaudière est obligatoire chaque année. Nous intervenons sur toutes les marques à Nice."
+          subtitle="L'entretien de votre chaudière est obligatoire chaque année. Nous intervenons sur toutes les marques à Argenteuil."
         />
         <div className="max-w-3xl mx-auto">
           <Card>

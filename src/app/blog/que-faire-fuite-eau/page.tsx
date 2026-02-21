@@ -7,8 +7,8 @@ import { SectionContainer } from "@/components/sections/SectionContainer";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Fuite d'eau : les 5 gestes qui peuvent tout changer | Alliance Depannage Nice",
-  description: "Fuite d'eau chez vous a Nice ? Voici les 5 gestes immediats a effectuer pour limiter les degats avant l'arrivee du plombier.",
+  title: "Fuite d'eau : les 5 gestes qui peuvent tout changer | Alliance Depannage Argenteuil",
+  description: "Fuite d'eau chez vous a Argenteuil ? Voici les 5 gestes immediats a effectuer pour limiter les degats avant l'arrivee du plombier.",
   path: "/blog/que-faire-fuite-eau",
 });
 
@@ -32,7 +32,7 @@ export default function ArticlePage() {
           </div>
           <h1>Fuite d'eau chez vous : les 5 gestes qui peuvent tout changer</h1>
           <p className="lead">
-            Une fuite d'eau, meme apparemment mineure, peut rapidement causer des milliers d'euros de degats si elle n'est pas traitee rapidement. A Nice comme partout, le bon reflexe c'est d'agir vite — et dans le bon ordre.
+            Une fuite d'eau, meme apparemment mineure, peut rapidement causer des milliers d'euros de degats si elle n'est pas traitee rapidement. A Argenteuil comme partout, le bon reflexe c'est d'agir vite — et dans le bon ordre.
           </p>
 
           <h2>Geste n°1 : Couper l'eau immediatement</h2>
@@ -57,7 +57,7 @@ export default function ArticlePage() {
 
           <h2>Geste n°5 : Appeler un plombier urgentiste</h2>
           <p>
-            Ne tardez pas. Meme si la fuite semble colmatee provisoirement, une intervention professionnelle est necessaire pour reparer durablement et eviter une recidive. Alliance Depannage intervient <strong>en moins de 2h a Nice, 24h/24 et 7j/7</strong>.
+            Ne tardez pas. Meme si la fuite semble colmatee provisoirement, une intervention professionnelle est necessaire pour reparer durablement et eviter une recidive. Alliance Depannage intervient <strong>en moins de 2h a Argenteuil, 24h/24 et 7j/7</strong>.
           </p>
 
           <h2>Quand suspecter une fuite cachee ?</h2>
@@ -66,7 +66,7 @@ export default function ArticlePage() {
           </p>
 
           <div className="not-prose mt-8 p-6 bg-accent-500/10 rounded-xl">
-            <p className="font-bold text-neutral-900 mb-2">Fuite en cours a Nice ?</p>
+            <p className="font-bold text-neutral-900 mb-2">Fuite en cours a Argenteuil ?</p>
             <a
               href={siteConfig.phoneHref}
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors"

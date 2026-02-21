@@ -18,7 +18,7 @@ export const metadata: Metadata = generatePageMetadata({
 
 const urgences = [
   { icon: DoorOpen, title: "Porte claquée", desc: "Vous avez claqué votre porte sans vos clés ? Nous intervenons en moins de 2h pour l'ouverture sans dommage dans la majorité des cas." },
-  { icon: KeyRound, title: "Clé cassée dans la serrure", desc: "Extraction professionnelle de la clé cassée sans abîmer le cylindre. Intervention propre et rapide à Nice." },
+  { icon: KeyRound, title: "Clé cassée dans la serrure", desc: "Extraction professionnelle de la clé cassée sans abîmer le cylindre. Intervention propre et rapide à Argenteuil." },
   { icon: Lock, title: "Serrure bloquée", desc: "Serrure grippée, cylindre défaillant, poignée cassée... Nous diagnostiquons et réparons ou remplaçons immédiatement." },
   { icon: ShieldCheck, title: "Remplacement après effraction", desc: "Suite à une tentative d'effraction, nous remplaçons votre serrure par un modèle certifié A2P pour une sécurité renforcée." },
 ];
@@ -34,7 +34,7 @@ const typeSerrures = [
 
 const etapes = [
   { num: "1", title: "Vous appelez", desc: "Décrivez votre situation. Nous estimons le délai et le tarif indicatif par téléphone avant de nous déplacer." },
-  { num: "2", title: "On intervient sous 2h", desc: "Un serrurier qualifié arrive chez vous à Nice avec l'outillage adapté à votre type de serrure." },
+  { num: "2", title: "On intervient sous 2h", desc: "Un serrurier qualifié arrive chez vous à Argenteuil avec l'outillage adapté à votre type de serrure." },
   { num: "3", title: "Problème résolu", desc: "Ouverture ou remplacement effectué. Facture transparente, pas de surprise." },
 ];
 
@@ -62,7 +62,7 @@ export default function SerrureriePage() {
       <SectionContainer>
         <SectionHeading
           title="Les urgences serrurerie que nous gérons"
-          subtitle="Disponible 24h/24 et 7j/7 à Nice et dans les Alpes-Maritimes."
+          subtitle="Disponible 24h/24 et 7j/7 à Argenteuil et dans le Val-d'Oise."
         />
         <div className="grid sm:grid-cols-2 gap-6">
           {urgences.map((u) => (

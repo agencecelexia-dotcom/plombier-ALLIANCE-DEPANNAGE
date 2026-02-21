@@ -23,8 +23,8 @@ export function localBusinessSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "43.7102",
-      longitude: "7.2620",
+      latitude: "48.9477",
+      longitude: "2.2474",
     },
     openingHoursSpecification: [
       {
@@ -51,10 +51,10 @@ export function localBusinessSchema() {
       "@type": "GeoCircle",
       geoMidpoint: {
         "@type": "GeoCoordinates",
-        latitude: "43.7102",
-        longitude: "7.2620",
+        latitude: "48.9477",
+        longitude: "2.2474",
       },
-      geoRadius: "40000",
+      geoRadius: "30000",
     },
     sameAs: [
       siteConfig.social.facebook,

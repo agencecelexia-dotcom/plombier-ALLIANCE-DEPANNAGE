@@ -20,8 +20,8 @@ import { faqGeneral } from "@/config/faq";
 import { heroImages } from "@/config/images";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Plombier dépanneur à Nice | Urgence 24h/24 7j/7 — Alliance Dépannage",
-  description: "Alliance Dépannage, votre plombier dépanneur à Nice. Urgence 24h/24 7j/7, plomberie, chauffage, climatisation, serrurerie. Devis gratuit.",
+  title: "Plombier dépanneur à Argenteuil | Urgence 24h/24 7j/7 — Alliance Dépannage",
+  description: "Alliance Dépannage, votre plombier dépanneur à Argenteuil. Urgence 24h/24 7j/7, plomberie, chauffage, climatisation, serrurerie. Devis gratuit.",
   path: "/",
 });
 

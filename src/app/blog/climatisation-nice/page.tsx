@@ -7,8 +7,8 @@ import { SectionContainer } from "@/components/sections/SectionContainer";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Climatisation a Nice : quel systeme choisir et comment l'entretenir ?",
-  description: "Guide complet sur la climatisation a Nice et dans les Alpes-Maritimes. Systemes split, reversibles, entretien annuel, installation par Alliance Depannage.",
+  title: "Climatisation a Argenteuil : quel systeme choisir et comment l'entretenir ?",
+  description: "Guide complet sur la climatisation a Argenteuil et dans les Val-d'Oise. Systemes split, reversibles, entretien annuel, installation par Alliance Depannage.",
   path: "/blog/climatisation-nice",
 });
 
@@ -20,7 +20,7 @@ export default function ArticlePage() {
           items={[
             { label: "Accueil", href: "/" },
             { label: "Blog", href: "/blog" },
-            { label: "Climatisation Nice" },
+            { label: "Climatisation Argenteuil" },
           ]}
         />
       </div>
@@ -30,9 +30,9 @@ export default function ArticlePage() {
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">Climatisation</span>
             <span className="text-xs text-muted-foreground ml-3">18 janvier 2026 — 7 min de lecture</span>
           </div>
-          <h1>Climatisation a Nice : quel systeme choisir et comment l'entretenir ?</h1>
+          <h1>Climatisation a Argenteuil : quel systeme choisir et comment l'entretenir ?</h1>
           <p className="lead">
-            Avec des etes de plus en plus chauds sur la Cote d'Azur, la climatisation n'est plus un luxe a Nice — c'est souvent une necessite. Mais face a la multitude de systemes disponibles, comment faire le bon choix ? Et une fois installe, comment l'entretenir ?
+            Avec des etes de plus en plus chauds sur la Cote d'Azur, la climatisation n'est plus un luxe a Argenteuil — c'est souvent une necessite. Mais face a la multitude de systemes disponibles, comment faire le bon choix ? Et une fois installe, comment l'entretenir ?
           </p>
 
           <h2>Les differents types de climatisation</h2>
@@ -44,7 +44,7 @@ export default function ArticlePage() {
 
           <h3>Le split multi-split</h3>
           <p>
-            Une seule unite exterieure alimente <strong>plusieurs unites interieures</strong> dans differentes pieces. Parfait pour un appartement ou une villa a Nice avec plusieurs pieces a climatiser. Plus economique a l'installation que plusieurs monosplits individuels.
+            Une seule unite exterieure alimente <strong>plusieurs unites interieures</strong> dans differentes pieces. Parfait pour un appartement ou une villa a Argenteuil avec plusieurs pieces a climatiser. Plus economique a l'installation que plusieurs monosplits individuels.
           </p>
 
           <h3>La climatisation gainable</h3>
@@ -54,7 +54,7 @@ export default function ArticlePage() {
 
           <h2>Comment choisir la puissance ?</h2>
           <p>
-            En regle generale, il faut compter <strong>100 W de puissance par m²</strong> pour une region mediterraneenne comme Nice. Un sejour de 25 m² necessiterait donc un appareil d'environ 2 500 W (2,5 kW). Mais l'exposition, l'isolation et la hauteur sous plafond influencent ce calcul.
+            En regle generale, il faut compter <strong>100 W de puissance par m²</strong> pour une region mediterraneenne comme Argenteuil. Un sejour de 25 m² necessiterait donc un appareil d'environ 2 500 W (2,5 kW). Mais l'exposition, l'isolation et la hauteur sous plafond influencent ce calcul.
           </p>
 
           <h2>L'entretien annuel : obligatoire et indispensable</h2>
@@ -69,11 +69,11 @@ export default function ArticlePage() {
 
           <h2>Pourquoi faire appel a Alliance Depannage pour votre clim ?</h2>
           <p>
-            Alliance Depannage installe et entretient les climatisations a Nice et dans les Alpes-Maritimes depuis 2007. Sohaib et son equipe proposent des <strong>devis gratuits sur mesure</strong>, une installation propre et soignee, et un service apres-vente rapide en cas de panne.
+            Alliance Depannage installe et entretient les climatisations a Argenteuil et dans les Val-d'Oise depuis 2007. Sohaib et son equipe proposent des <strong>devis gratuits sur mesure</strong>, une installation propre et soignee, et un service apres-vente rapide en cas de panne.
           </p>
 
           <div className="not-prose mt-8 p-6 bg-accent-500/10 rounded-xl">
-            <p className="font-bold text-neutral-900 mb-2">Besoin d'installer ou de depanner votre clim a Nice ?</p>
+            <p className="font-bold text-neutral-900 mb-2">Besoin d'installer ou de depanner votre clim a Argenteuil ?</p>
             <a
               href={siteConfig.phoneHref}
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors"

@@ -4,7 +4,7 @@ export const faqGeneral: FAQ[] = [
   {
     question: "Quels sont vos délais d'intervention en urgence ?",
     answer:
-      "Pour les urgences plomberie (fuite d'eau, canalisation bouchée, panne de chaudière) et serrurerie (porte bloquée), nous intervenons en moins de 2 heures à Nice et dans les Alpes-Maritimes. Disponible 24h/24 et 7j/7. Appelez-nous au 06 98 59 14 98.",
+      "Pour les urgences plomberie (fuite d'eau, canalisation bouchée, panne de chaudière) et serrurerie (porte bloquée), nous intervenons en moins de 2 heures à Argenteuil et dans le Val-d'Oise. Disponible 24h/24 et 7j/7. Appelez-nous au 06 98 59 14 98.",
   },
   {
     question: "Vos devis sont-ils gratuits ?",
@@ -27,7 +27,7 @@ export const faqDepannage: FAQ[] = [
   {
     question: "Intervenez-vous le week-end et les jours fériés ?",
     answer:
-      "Oui, Alliance Dépannage intervient 7 jours sur 7, 24h/24, y compris les jours fériés, pour toutes les urgences plomberie et serrurerie à Nice. Un supplément peut s'appliquer pour les interventions de nuit.",
+      "Oui, Alliance Dépannage intervient 7 jours sur 7, 24h/24, y compris les jours fériés, pour toutes les urgences plomberie et serrurerie à Argenteuil. Un supplément peut s'appliquer pour les interventions de nuit.",
   },
   {
     question: "Combien coûte un dépannage en urgence ?",
@@ -63,7 +63,7 @@ export const faqSalleDeBain: FAQ[] = [
   {
     question: "Quelles sont les aides pour une salle de bain PMR ?",
     answer:
-      "Selon votre situation, vous pouvez bénéficier de MaPrimeAdapt', des aides de l'ANAH, du crédit d'impôt et des aides de votre caisse de retraite. Renseignez-vous auprès de votre mairie de Nice.",
+      "Selon votre situation, vous pouvez bénéficier de MaPrimeAdapt', des aides de l'ANAH, du crédit d'impôt et des aides de votre caisse de retraite. Renseignez-vous auprès de votre mairie d'Argenteuil.",
   },
   {
     question: "Peut-on remplacer une baignoire par une douche italienne ?",
@@ -107,7 +107,7 @@ export const faqSerrurerie: FAQ[] = [
   {
     question: "Intervenez-vous en urgence pour une porte claquée ?",
     answer:
-      "Oui, Alliance Dépannage intervient 24h/24 et 7j/7 pour toute ouverture de porte en urgence à Nice et dans les Alpes-Maritimes. Nous ouvrons votre porte sans abîmer le cadre dans la majorité des cas. Appelez le 06 98 59 14 98.",
+      "Oui, Alliance Dépannage intervient 24h/24 et 7j/7 pour toute ouverture de porte en urgence à Argenteuil et dans le Val-d'Oise. Nous ouvrons votre porte sans abîmer le cadre dans la majorité des cas. Appelez le 06 98 59 14 98.",
   },
   {
     question: "Combien coûte l'ouverture d'une porte claquée ?",

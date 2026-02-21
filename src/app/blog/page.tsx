@@ -17,8 +17,8 @@ export const metadata: Metadata = generatePageMetadata({
 const articles = [
   {
     slug: "depannage-urgence-nice",
-    title: "Depannage urgence a Nice : que faire et qui appeler ?",
-    excerpt: "Fuite d'eau, panne de chaudiere, porte bloquee... Decouvrez les bons reflexes en situation d'urgence et comment Alliance Depannage peut vous aider a Nice.",
+    title: "Depannage urgence a Argenteuil : que faire et qui appeler ?",
+    excerpt: "Fuite d'eau, panne de chaudiere, porte bloquee... Decouvrez les bons reflexes en situation d'urgence et comment Alliance Depannage peut vous aider a Argenteuil.",
     date: "15 fevrier 2026",
     category: "Depannage",
     readTime: "4 min",
@@ -41,16 +41,16 @@ const articles = [
   },
   {
     slug: "serrurerie-urgence-nice",
-    title: "Porte claquee a Nice : comment reagir et eviter les arnaques",
-    excerpt: "Vous etes bloque devant votre porte ? Voici comment choisir un serrurier de confiance a Nice, ce que coute une ouverture de porte et les arnaques a eviter.",
+    title: "Porte claquee a Argenteuil : comment reagir et eviter les arnaques",
+    excerpt: "Vous etes bloque devant votre porte ? Voici comment choisir un serrurier de confiance a Argenteuil, ce que coute une ouverture de porte et les arnaques a eviter.",
     date: "25 janvier 2026",
     category: "Serrurerie",
     readTime: "5 min",
   },
   {
     slug: "climatisation-nice",
-    title: "Climatisation a Nice : quel systeme choisir et comment l'entretenir ?",
-    excerpt: "Dans les Alpes-Maritimes, la climatisation est indispensable. Decouvrez les systemes disponibles, les conseils d'installation et l'entretien annuel recommande.",
+    title: "Climatisation a Argenteuil : quel systeme choisir et comment l'entretenir ?",
+    excerpt: "Dans les Val-d'Oise, la climatisation est indispensable. Decouvrez les systemes disponibles, les conseils d'installation et l'entretien annuel recommande.",
     date: "18 janvier 2026",
     category: "Climatisation",
     readTime: "7 min",

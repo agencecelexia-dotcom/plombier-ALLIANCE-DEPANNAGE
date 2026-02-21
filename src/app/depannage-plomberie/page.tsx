@@ -27,7 +27,7 @@ const urgences = [
 
 const etapes = [
   { num: "1", title: "Vous appelez", desc: "Décrivez-nous votre problème. Nous évaluons l'urgence et vous donnons un tarif indicatif immédiatement." },
-  { num: "2", title: "On intervient sous 2h", desc: "Un technicien qualifié se déplace chez vous à Nice avec tout le matériel nécessaire." },
+  { num: "2", title: "On intervient sous 2h", desc: "Un technicien qualifié se déplace chez vous à Argenteuil avec tout le matériel nécessaire." },
   { num: "3", title: "Problème résolu", desc: "Réparation immédiate dans la majorité des cas. Facture claire, pas de mauvaise surprise." },
 ];
 
@@ -78,7 +78,7 @@ export default function DepannagePage() {
       <SectionContainer variant="gray">
         <SectionHeading
           title="Comment ça marche ?"
-          subtitle="3 étapes simples pour un dépannage sans stress à Nice."
+          subtitle="3 étapes simples pour un dépannage sans stress à Argenteuil."
         />
         <div className="grid md:grid-cols-3 gap-8">
           {etapes.map((e) => (

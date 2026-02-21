@@ -7,8 +7,8 @@ import { SectionContainer } from "@/components/sections/SectionContainer";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Mon radiateur ne chauffe plus : causes et solutions | Alliance Depannage Nice",
-  description: "Radiateur froid ou tiede en hiver a Nice ? Decouvrez les causes les plus frequentes et les solutions — celles que vous pouvez faire vous-meme et quand appeler un chauffagiste.",
+  title: "Mon radiateur ne chauffe plus : causes et solutions | Alliance Depannage Argenteuil",
+  description: "Radiateur froid ou tiede en hiver a Argenteuil ? Decouvrez les causes les plus frequentes et les solutions — celles que vous pouvez faire vous-meme et quand appeler un chauffagiste.",
   path: "/blog/radiateur-ne-chauffe-plus",
 });
 
@@ -32,7 +32,7 @@ export default function ArticlePage() {
           </div>
           <h1>Mon radiateur ne chauffe plus : causes et solutions</h1>
           <p className="lead">
-            Un ou plusieurs radiateurs froids en plein hiver, c'est une situation stressante mais souvent resolvable. Voici un guide pratique pour identifier la cause — et savoir quand il faut vraiment appeler un chauffagiste a Nice.
+            Un ou plusieurs radiateurs froids en plein hiver, c'est une situation stressante mais souvent resolvable. Voici un guide pratique pour identifier la cause — et savoir quand il faut vraiment appeler un chauffagiste a Argenteuil.
           </p>
 
           <h2>Cause 1 : Le radiateur a besoin d'etre purge</h2>
@@ -52,7 +52,7 @@ export default function ArticlePage() {
 
           <h2>Cause 4 : Le circulateur est en panne</h2>
           <p>
-            Le circulateur assure la circulation de l'eau dans le circuit de chauffage. S'il tombe en panne, aucun radiateur ne chauffe correctement. C'est une reparation a confier a un chauffagiste professionnel — Alliance Depannage peut intervenir le jour meme a Nice.
+            Le circulateur assure la circulation de l'eau dans le circuit de chauffage. S'il tombe en panne, aucun radiateur ne chauffe correctement. C'est une reparation a confier a un chauffagiste professionnel — Alliance Depannage peut intervenir le jour meme a Argenteuil.
           </p>
 
           <h2>Cause 5 : La chaudiere est en panne ou mal reglere</h2>
@@ -67,7 +67,7 @@ export default function ArticlePage() {
           </ul>
 
           <div className="not-prose mt-8 p-6 bg-accent-500/10 rounded-xl">
-            <p className="font-bold text-neutral-900 mb-2">Chauffage en panne a Nice ?</p>
+            <p className="font-bold text-neutral-900 mb-2">Chauffage en panne a Argenteuil ?</p>
             <a
               href={siteConfig.phoneHref}
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors"

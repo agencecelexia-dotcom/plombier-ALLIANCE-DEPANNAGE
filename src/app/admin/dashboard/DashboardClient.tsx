@@ -452,28 +452,24 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
   }
 
   async function handleUpdateStatus(id: string, status: Submission["status"]) {
-    const res = await fetch("/api/admin/submissions", {
+    setSubmissions((prev) =>
+      prev.map((s) => (s.id === id ? { ...s, status } : s))
+    );
+    fetch("/api/admin/submissions", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, status }),
     });
-    if (res.ok) {
-      setSubmissions((prev) =>
-        prev.map((s) => (s.id === id ? { ...s, status } : s))
-      );
-    }
   }
 
   async function handleDelete(id: string) {
     if (!confirm("Supprimer cette demande ?")) return;
-    const res = await fetch("/api/admin/submissions", {
+    setSubmissions((prev) => prev.filter((s) => s.id !== id));
+    fetch("/api/admin/submissions", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id }),
     });
-    if (res.ok) {
-      setSubmissions((prev) => prev.filter((s) => s.id !== id));
-    }
   }
 
   return (
@@ -513,7 +509,7 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
         <div className="mb-6 bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 flex items-start gap-3">
           <Info className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
           <div>
-            <p className="text-white font-medium">Bonjour Thomas !</p>
+            <p className="text-white font-medium">Bonjour Sohaib !</p>
             <p className="text-sm text-slate-400 mt-0.5">
               Les donnees affichees sont factices et servent uniquement a des fins de demonstration.
             </p>

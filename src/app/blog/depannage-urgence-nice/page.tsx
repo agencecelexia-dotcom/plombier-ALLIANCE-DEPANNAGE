@@ -7,8 +7,8 @@ import { SectionContainer } from "@/components/sections/SectionContainer";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Depannage urgence a Nice : que faire et qui appeler ? | Alliance Depannage",
-  description: "Fuite d'eau, panne de chaudiere, porte bloquee a Nice... Decouvrez les bons reflexes et pourquoi appeler Alliance Depannage en urgence 24h/24.",
+  title: "Depannage urgence a Argenteuil : que faire et qui appeler ? | Alliance Depannage",
+  description: "Fuite d'eau, panne de chaudiere, porte bloquee a Argenteuil... Decouvrez les bons reflexes et pourquoi appeler Alliance Depannage en urgence 24h/24.",
   path: "/blog/depannage-urgence-nice",
 });
 
@@ -20,7 +20,7 @@ export default function ArticlePage() {
           items={[
             { label: "Accueil", href: "/" },
             { label: "Blog", href: "/blog" },
-            { label: "Depannage urgence Nice" },
+            { label: "Depannage urgence Argenteuil" },
           ]}
         />
       </div>
@@ -30,9 +30,9 @@ export default function ArticlePage() {
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">Depannage</span>
             <span className="text-xs text-muted-foreground ml-3">15 fevrier 2026 — 4 min de lecture</span>
           </div>
-          <h1>Depannage urgence a Nice : que faire et qui appeler ?</h1>
+          <h1>Depannage urgence a Argenteuil : que faire et qui appeler ?</h1>
           <p className="lead">
-            A Nice et dans les Alpes-Maritimes, les situations d'urgence a domicile peuvent arriver n'importe quand : fuite d'eau en pleine nuit, panne de chaudiere un dimanche, serrure bloquee apres 20h. La cle, c'est de savoir reagir vite — et de connaitre les bons interlocuteurs.
+            A Argenteuil et dans les Val-d'Oise, les situations d'urgence a domicile peuvent arriver n'importe quand : fuite d'eau en pleine nuit, panne de chaudiere un dimanche, serrure bloquee apres 20h. La cle, c'est de savoir reagir vite — et de connaitre les bons interlocuteurs.
           </p>
 
           <h2>1. Fuite d'eau : les premiers gestes</h2>
@@ -45,18 +45,18 @@ export default function ArticlePage() {
 
           <h2>2. Panne de chaudiere : ne touchez pas a tout</h2>
           <p>
-            Si votre chaudiere affiche un code erreur ou s'est eteinte, verifiez d'abord la pression du circuit (le manometre doit etre entre 1 et 2 bars). Un simple remplissage peut resoudre le probleme. Si ce n'est pas le cas, n'essayez pas de reparer vous-meme : appelez un chauffagiste qualifie. En hiver a Nice, une panne de chauffage est une vraie urgence.
+            Si votre chaudiere affiche un code erreur ou s'est eteinte, verifiez d'abord la pression du circuit (le manometre doit etre entre 1 et 2 bars). Un simple remplissage peut resoudre le probleme. Si ce n'est pas le cas, n'essayez pas de reparer vous-meme : appelez un chauffagiste qualifie. En hiver a Argenteuil, une panne de chauffage est une vraie urgence.
           </p>
 
           <h2>3. Porte claquee : ne paniquez pas</h2>
           <p>
-            Vous avez claque votre porte sans vos cles ? Avant de casser une vitre (ce qui coute cher et abime la securite), appelez un serrurier agree. Alliance Depannage intervient pour l'ouverture de porte en moins de 2h a Nice, sans abimer le cadre dans la grande majorite des cas.
+            Vous avez claque votre porte sans vos cles ? Avant de casser une vitre (ce qui coute cher et abime la securite), appelez un serrurier agree. Alliance Depannage intervient pour l'ouverture de porte en moins de 2h a Argenteuil, sans abimer le cadre dans la grande majorite des cas.
           </p>
 
           <h2>4. Pourquoi choisir Alliance Depannage pour vos urgences ?</h2>
           <ul>
             <li><strong>Disponible 24h/24 et 7j/7</strong>, meme la nuit et les jours feries</li>
-            <li><strong>Intervention en moins de 2h</strong> a Nice et dans les Alpes-Maritimes</li>
+            <li><strong>Intervention en moins de 2h</strong> a Argenteuil et dans les Val-d'Oise</li>
             <li><strong>Tarif annonce avant deplacement</strong> : pas de surprise</li>
             <li><strong>Un seul numero</strong> pour la plomberie, le chauffage ET la serrurerie</li>
           </ul>
