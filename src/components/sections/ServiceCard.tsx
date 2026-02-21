@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Siren, Wrench, Bath, Flame, Droplets, ClipboardCheck } from "lucide-react";
+import { Siren, Wrench, Bath, Flame, Droplets, ClipboardCheck, Wind, KeyRound } from "lucide-react";
 import type { Service } from "@/types";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -9,6 +9,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Flame,
   Droplets,
   ClipboardCheck,
+  Wind,
+  KeyRound,
 };
 
 interface ServiceCardProps {
